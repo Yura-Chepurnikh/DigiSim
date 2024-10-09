@@ -5,10 +5,10 @@
 
 class AndLogicGateSymbol : public LogicGateSymbol {
 public:
-    AndLogicGateSymbol(QWidget* parent = nullptr);
+    AndLogicGateSymbol();
 
 protected:
-    void paintEvent(QPaintEvent* event) override;
+    void paint(QPainter* painter, const QStyleOptionGraphicsItem* option, QWidget* widget) override;
 };
 
 #endif // AND_LOGIC_GATE_SYMBOL_H

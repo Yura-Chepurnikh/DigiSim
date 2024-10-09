@@ -6,18 +6,25 @@
 #include <QtGui/QPainterPath>
 #include <QtGui/QPainter>
 #include <QGraphicsView>
+#include <QGraphicsItem>
+#include <QGraphicsSceneMouseEvent>
 
-class LogicGateSymbol : public QGraphicsView {
+class LogicGateSymbol : public QGraphicsItem {
 public:
-    LogicGateSymbol(QWidget* parent = nullptr);
+    LogicGateSymbol();
 
     bool isDragging = false;
-    QPoint startPosition;
+    QPointF startPosition;
+
+    int width = 100;
+    int height = 100;
 
 protected:
-    void mousePressEvent(QMouseEvent* event) override;
-    void mouseMoveEvent(QMouseEvent* event) override;
-    void mouseReleaseEvent(QMouseEvent* event) override;
+    void mousePressEvent(QGraphicsSceneMouseEvent* event) override;
+    void mouseMoveEvent(QGraphicsSceneMouseEvent* event) override;
+    void mouseReleaseEvent(QGraphicsSceneMouseEvent* event) override;
+
+    QRectF boundingRect() const override;
 };
 
 #endif // LOGIC_GATE_SYMBOL_H

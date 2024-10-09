@@ -3,6 +3,7 @@
 
 #include "logic_gate_symbol.h"
 #include "and_logic_gate_symbol.h"
+#include "or_logic_gate_symbol.h"
 #include <QGraphicsView>
 #include <QWheelEvent>
 

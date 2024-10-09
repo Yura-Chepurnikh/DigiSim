@@ -5,9 +5,9 @@ WorkingSpace::WorkingSpace(QWidget *parent) : QGraphicsView(parent)
     QGraphicsScene* scene = new QGraphicsScene(this);
     setScene(scene);
 
-    sym = new AndLogicGateSymbol(parent);
+    sym = new AndLogicGateSymbol();
 
-    scene->addWidget(sym);
+    scene->addItem(sym);
 }
 
 void WorkingSpace::wheelEvent(QWheelEvent *event) {
@@ -15,8 +15,8 @@ void WorkingSpace::wheelEvent(QWheelEvent *event) {
     int scaleFactor = 1.1;
 
     if (delta > 0) {
-        scale(scaleFactor, scaleFactor);
-    } else {
+        scale(scaleFactor * 1.1, scaleFactor * 1.1);
+    } else if (delta < 0) {
         scale(scaleFactor / 1.1, scaleFactor / 1.1);
     }
 

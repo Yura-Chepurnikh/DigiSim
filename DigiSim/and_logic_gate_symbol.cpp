@@ -1,17 +1,18 @@
 #include "and_logic_gate_symbol.h"
 
-AndLogicGateSymbol::AndLogicGateSymbol(QWidget* parent) : LogicGateSymbol(parent)
-{
-}
+AndLogicGateSymbol::AndLogicGateSymbol() : LogicGateSymbol() { }
 
-void AndLogicGateSymbol::paintEvent(QPaintEvent *event) {
-    QPainter painter(this);
+void AndLogicGateSymbol::paint(QPainter* painter, const QStyleOptionGraphicsItem* option, QWidget* widget) {
+    Q_UNUSED(widget);
+    Q_UNUSED(option);
 
     QPainterPath andGatePath;
-    andGatePath.moveTo(50, 50);
-    andGatePath.lineTo(100, 100);
+    andGatePath.moveTo(startPosition.x(), startPosition.y());
+    andGatePath.lineTo(startPosition.x() + 50,  startPosition.y());
+    andGatePath.arcTo(startPosition.x() + 50,  startPosition.y(), width - startPosition.x() + 50, height - 50, 90, -180);
+    andGatePath.lineTo(startPosition.x() - 50,  startPosition.y() + 50);
     andGatePath.closeSubpath();
 
-    painter.setPen(Qt::black);
-    painter.drawPath(andGatePath);
+    painter->setPen(Qt::black);
+    painter->drawPath(andGatePath);
 }
