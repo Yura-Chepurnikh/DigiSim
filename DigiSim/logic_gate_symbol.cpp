@@ -1,6 +1,8 @@
 #include "logic_gate_symbol.h"
 
-LogicGateSymbol::LogicGateSymbol(QWidget* parent) : QWidget(parent) { }
+LogicGateSymbol::LogicGateSymbol(QWidget* parent) : QGraphicsView(parent)
+{
+}
 
 void LogicGateSymbol::mousePressEvent(QMouseEvent *event) {
     if (event->button() == Qt::LeftButton) {

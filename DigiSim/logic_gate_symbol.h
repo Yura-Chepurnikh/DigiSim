@@ -5,8 +5,9 @@
 #include <QMouseEvent>
 #include <QtGui/QPainterPath>
 #include <QtGui/QPainter>
+#include <QGraphicsView>
 
-class LogicGateSymbol : public QWidget {
+class LogicGateSymbol : public QGraphicsView {
 public:
     LogicGateSymbol(QWidget* parent = nullptr);
 

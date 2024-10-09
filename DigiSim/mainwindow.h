@@ -3,6 +3,8 @@
 
 #include <QMainWindow>
 
+#include "working_space.h"
+
 QT_BEGIN_NAMESPACE
 namespace Ui {
 class MainWindow;
@@ -14,6 +16,8 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
+    WorkingSpace* workingSpace;
+
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 

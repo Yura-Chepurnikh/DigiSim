@@ -7,11 +7,6 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     MainWindow w;
-
-    AndLogicGateSymbol* andGateSym = new AndLogicGateSymbol();
-    w.setCentralWidget(andGateSym);
-
-
     w.show();
     return a.exec();
 }

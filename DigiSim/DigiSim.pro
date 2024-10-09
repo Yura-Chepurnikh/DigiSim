@@ -12,12 +12,14 @@ SOURCES += \
     and_logic_gate_symbol.cpp \
     logic_gate_symbol.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    working_space.cpp
 
 HEADERS += \
     and_logic_gate_symbol.h \
     logic_gate_symbol.h \
-    mainwindow.h
+    mainwindow.h \
+    working_space.h
 
 FORMS += \
     mainwindow.ui
